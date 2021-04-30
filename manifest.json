@@ -1,0 +1,8 @@
+{
+  "name": "FES Driver's License Check Application",
+  "short_name": "LicenseCheck",
+  "start_url": ".",
+  "background_color": "#080991",
+  "theme_color": "#240992",
+  "display": "standalone"
+}
