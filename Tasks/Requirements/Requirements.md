@@ -11,15 +11,15 @@ opportunity to edit any datasets or scan the RFID-tags.
   The database includes datasets of all vehicles and of every driver in the
 company.
 
-  ## 2.1 Key Management
-    The key datasets contain information about the associated vehicles and the
-  required licenses and qualifications, that are needed to legitimately drive
-  that vehicle.
+## 2.1 Key Management
+  The key datasets contain information about the associated vehicles and the
+required licenses and qualifications, that are needed to legitimately drive
+that vehicle.
 
-  ## 2.2 Driver Management
-    The driver datasets contain information about the driver's licenses and the
-  qualifications of the driver. They also include as well the validity as the
-  expiring date of both.
+## 2.2 Driver Management
+  The driver datasets contain information about the driver's licenses and the
+qualifications of the driver. They also include as well the validity as the
+expiring date of both.
 
 ## 3. RFID-Scan
   The application shall be able to read the RFID-tags and tell the system the
