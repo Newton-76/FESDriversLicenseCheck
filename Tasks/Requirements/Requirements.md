@@ -4,7 +4,7 @@
 
 ## 1. Log-In
   In this step, the representative of the company has the opportunity to log in
-with this user-name and a general password. Without a login there will be no
+with this user-name and a general administrator-PIN. Without a login there will be no
 opportunity to edit any datasets or scan the RFID-tags.
 
 ## 2. Database
