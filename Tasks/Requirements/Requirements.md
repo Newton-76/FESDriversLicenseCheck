@@ -8,7 +8,7 @@ with this user-name and a general administrator-PIN. Without a login there will 
 opportunity to edit any datasets or scan the RFID-tags.
 
 ## 2. Database
-  The database includes datasets of all vehicles and of every driver in the
+  The SQL-database includes datasets of all vehicles and of every driver in the
 company.
 
 ## 2.1 Key Management
