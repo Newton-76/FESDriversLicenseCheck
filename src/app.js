@@ -1,6 +1,5 @@
-
-if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('/sw.js')
-    .then((reg) => console.log('Registration successfull', reg))
-    .catch((err) => console.log('Registration failed', err));
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js");
+  //  .then((registration) => console.log("Registration successfull: ", registration))
+  //    .catch((error) => console.log("Registration failed: ", error));
 }
