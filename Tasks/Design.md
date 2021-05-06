@@ -4,7 +4,7 @@
 \+ No Installation on Client System  
 \+ No Update on Client System  
 \+ Can be shared through URL rather than App Store  
-\+ An Icon linking to the PWA can be created on the device  
+\+ An Icon linking to the PWA can be created on the Device  
 \+ Low Data Consumption  
 \+ Offline Usability through Service Worker API  
 \+ Fast Load Time  
@@ -13,8 +13,8 @@
 
 \- Uses more Battery Power  
 \- RFID Functionality is only available on Chrome for Android as an Experimental Feature  
-\- Limited Offline functionality  
-\- Limited access to hardware features  
+\- Limited Offline Functionality  
+\- Limited access to Hardware Features  
 \- Requires us learning about PWAs, Javascript and HTML rather than using our existing Java experience  
 \- PWAs are relatively new, so there is less Information and Created Content available  
 
