@@ -1,9 +1,9 @@
 ### PWA vs Native Application
 
-\+ Multi Platform Compatibility
-\+ No Installation on Client System
-\+ No Update on Client System
-\+ Can be shared through URL rather than App Store
+\+ Multi Platform Compatibility  
+\+ No Installation on Client System  
+\+ No Update on Client System  
+\+ Can be shared through URL rather than App Store  
 + An Icon linking to the PWA can be created on the device
 + Low Data Consumption
 + Offline Usability through Service Worker API
