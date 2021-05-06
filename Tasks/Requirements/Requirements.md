@@ -1,4 +1,4 @@
-//Editor: Denis Neumann, 1308358
+//Author: Denis Neumann, 1308358
 
 # Requirements:
 

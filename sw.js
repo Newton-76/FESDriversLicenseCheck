@@ -11,7 +11,7 @@ const ASSETS = [
 ];
 
 self.addEventListener("install", event => {
-  console.log("Installing");
+  console.log("Installing...");
   event.waitUntil(
     caches.open(CACHE_NAME)
     .then(cache => {
