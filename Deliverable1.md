@@ -39,6 +39,6 @@ tested by Denis using Lighthouse by Google Chrome.
 - Make sure to meet requirements before presenting the product
   => Driver's licenses are also equipped with a RFID-tag
 - How to structure and organize the meeting with the customer
-- Fixed to-do's on scheduled meetings
+- Set to do's for scheduled meetings rather than making only general meetings, so there is a structured purpose to work towards.
 
 ### Addendum
