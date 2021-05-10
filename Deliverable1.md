@@ -2,11 +2,11 @@
 
 ### Requirements Analysis
 
-<p>Requirements are stored in:&nbsp;<a href="https://github.com/Newton-76/FESDriversLicenseCheck/tree/master/Tasks/Requirements">FES\Tasks\Requirements\</a></p>
+<p>Requirements are stored in:&nbsp;<a href="https://github.com/Newton-76/FESDriversLicenseCheck/tree/master/Tasks/Requirements">\FES\Tasks\Requirements</a></p>
 
 ### Design
 
-The design is stored in "~/Tasks/Designs/Design.md"
+<p>The design is stored in:&nbsp;<a href="https://github.com/Newton-76/FESDriversLicenseCheck/tree/master/Tasks/Designs">\FES\Tasks\Designs</a></p>
 
 ### Implementation
 
@@ -32,7 +32,7 @@ tested by Denis using Lighthouse by Google Chrome.
 
 ### Reviews
 
-Reviews are stored in "~/Tasks/Reviews/*"
+<p>Reviews are stored in:&nbsp;<a href="https://github.com/Newton-76/FESDriversLicenseCheck/tree/master/Tasks/Reviews">\FES\Tasks\Reviews</a></p>
 
 ### Lessons Learned
 
