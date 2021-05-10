@@ -2,7 +2,7 @@
 
 Took care of the design evaluation. In the first step he had an error in
 formatting the plus and minus symbols in the .md file.
-There are still a lot of spelling mistakes, especially considering the large
+There are still a lot of spelling mistakes, especially considering the upper
 and lower case spelling.
 
 # Eric
