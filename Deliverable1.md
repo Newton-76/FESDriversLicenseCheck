@@ -40,5 +40,3 @@ tested by Denis using Lighthouse by Google Chrome.
   => Driver's licenses are also equipped with a RFID-tag
 - How to structure and organize the meeting with the customer
 - Set to do's for scheduled meetings rather than making only general meetings, so there is a structured purpose to work towards.
-
-### Addendum
