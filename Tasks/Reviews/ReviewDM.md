@@ -7,4 +7,4 @@ and database should be more in-depth.
 # Eric (Documentary and Sketches)  
   
 Only shows one possible path through the application menu and lacks documentation   
-so far.  
+so far. There is no testable implementation yet.
