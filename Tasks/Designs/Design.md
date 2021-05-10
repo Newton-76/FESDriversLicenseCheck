@@ -28,7 +28,7 @@ knowledge about it. The client also expressed a preference for something new ove
 
 \+ Highly customizable  
 \+ Native Integration of GitHub  
-\+ Comes integrated with Node.js  
+\+ Comes with integration for Node.js  
 \+ Open Source  
 \+ Offers Fuzzy Search and Linters  
 
