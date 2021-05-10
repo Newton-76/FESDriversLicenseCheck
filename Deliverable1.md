@@ -39,5 +39,6 @@ tested by Denis using Lighthouse by Google Chrome.
 - Make sure to meet requirements before presenting the product
   => Driver's licenses are also equipped with a RFID-tag
 - How to structure and organize the meeting with the customer
+- Fixed to-do's on scheduled meetings
 
 ### Addendum
