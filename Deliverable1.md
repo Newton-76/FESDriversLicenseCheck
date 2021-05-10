@@ -24,6 +24,10 @@ tested by Denis using Lighthouse by Google Chrome.
 
 ### Status / grade of fulfillment of work products
 
+- Requirements:15%
+- Design/Documentation:20%
+- Implementation: 15-20%
+- Test:5%
 
 
 ### Reviews
