@@ -6,6 +6,8 @@ Requirements are stored in "~/Tasks/Requirements/Requirements.md"
 
 ### Design
 
+The design is stored in "~/Tasks/Designs/Design.md"
+
 ### Implementation
 
 The Github environment and the foundation of the application has been organized

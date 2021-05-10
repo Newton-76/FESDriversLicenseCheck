@@ -1,7 +1,9 @@
 # Daniel
 
-Didn't contribute quite enough to get a review, but he has lots of good ideas
-for the project and I'm sure he will deliver soon.
+Took care of the design evaluation. In the first step he had an error in
+formatting the plus and minus symbols in the .md file.
+There are still a lot of spelling mistakes, especially considering the large
+and lower case spelling.
 
 # Eric
 
