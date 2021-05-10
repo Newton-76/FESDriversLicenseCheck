@@ -4,8 +4,8 @@
 
 ## 1. Log-In
   In this step, the representative of the company has the opportunity to log in
-with this user-name and a general administrator-PIN. Without a login there will be no
-opportunity to edit any datasets or scan the RFID-tags.
+with this user-name and a general administrator-PIN. Without a login there will
+be no opportunity to edit any datasets or scan the RFID-tags.
 
 ## 2. Database
   The SQL-database includes datasets of all vehicles and of every driver in the
