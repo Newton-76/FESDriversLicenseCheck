@@ -26,7 +26,11 @@ async function scanTag() {
         for (const record of message.records) {
           console.log("Record type:  " + record.recordType);
           console.log("MIME type:    " + record.mediaType);
+<<<<<<< HEAD
           alert("Record id:    " + record.id);
+=======
+          console.log("Record id:    " + record.id);
+>>>>>>> 6d9e2291d4312954e1b237383f546b700a9605a4
         }
       };
     }).catch(error => {
