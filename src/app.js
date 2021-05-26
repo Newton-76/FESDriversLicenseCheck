@@ -16,7 +16,14 @@ document.body.appendChild(scanButton);
  * Prototype, fully copied from https://web.dev/nfc/
  */
 async function scanTag() {
-  if ("NDEFReader" in navigator) {
+  try {
+    const status = await navigator.permissions.query({ name: 'nfc'});
+  }
+  catch(e) {
+    alert("No permission to use NFC!");
+
+  }
+  if ("NDEFReader" in window) {
     const ndef = new NDEFReader();
     ndef.scan().then(() => {
       console.log("Scan started successfully.");
