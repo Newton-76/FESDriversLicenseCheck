@@ -6,7 +6,9 @@ if ("serviceWorker" in navigator) {
 
 let scanButton = document.createElement("button");
 scanButton.innerHTML = "ClickMe!";
-scanButton.addEventListener("click", scanTag());
+scanButton.addEventListener("click", e => {
+  scanTag()
+});
 document.body.appendChild(scanButton);
 
 
