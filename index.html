@@ -6,13 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#040521">
   <title>FES Driver's License Check</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/img/apple-icon-180.png">
   <link rel="icon" href="/img/favicon.ico">
+
 </head>
 <body>
-  <h1>(: Hier könnte Ihre Werbung stehen, jaja :)</h1>
-
+  <img src="/img/fes.png">
+  <h5> Geben Sie die 4-stellige PIN ein
+und drücken Sie auf bestätigen </h1>
+<input
+  type="number"
+  id="password"
+  name="password"
+  pattern="[0-9]{4}"
+  maxlength="4"
+  style="-webkit-text-security: disc;"
+  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+/>
+<div class="w3-container">
+  <input type="button" class="w3-button w3-blue" value="Input Button">
+</div>
   <script src="/src/app.js"></script>
 </body>
 
