@@ -5,7 +5,7 @@
  * Author: Denis Neumann, 1308358
  */
 
-let rfid = 2409;
+let rfid = 3005;
 let mysql = require("mysql");
 let sqlQuery = "SELECT * FROM fahrzeug WHERE RFID = ?"
 

@@ -6,7 +6,33 @@ if ("serviceWorker" in navigator) {
   //    .catch((error) => console.log("Registration failed: ", error));
 }
 
-let scanButton = document.createElement("button");
+// code by: https://gerritniezen.com/getting-started-with-web-nfc
+document.addEventListener('DOMContentLoaded', event => {
+  const scanButton = document.getElementById('scan');
+  const reader = new NDEFReader();
+
+  scanButton.addEventListener('click', async () => {
+    try {
+      console.log('Scanning..');
+      await reader.scan();
+    } catch(e) {
+      console.error("Error: ", e);
+    }
+  });
+
+  reader.onreading = event => {
+    console.log('Event:', event);
+    document.getElementById("p1").innerHTML = event.serialNumber;
+  };
+});
+
+
+
+
+
+/*
+const scanButton = document.createElement("button");
+const ndef = new NDEFReader();
 scanButton.innerHTML = "Click me!";
 scanButton.addEventListener("click", e => {
   console.log("You clicked me!")
