@@ -1,0 +1,23 @@
+{
+  "name": "fesdriverslicensecheck",
+  "version": "1.0.0",
+  "description": "Project for the lecture \"Mobile Application Exercises\"",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Newton-76/FESDriversLicenseCheck.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Newton-76/FESDriversLicenseCheck/issues"
+  },
+  "homepage": "https://github.com/Newton-76/FESDriversLicenseCheck#readme",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "uniq": "^1.0.1"
+  }
+}

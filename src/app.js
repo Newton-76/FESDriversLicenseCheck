@@ -1,3 +1,5 @@
+//Author: Denis Neumann, 1308358
+
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js");
   //  .then((registration) => console.log("Registration successfull: ", registration))
@@ -7,14 +9,13 @@ if ("serviceWorker" in navigator) {
 let scanButton = document.createElement("button");
 scanButton.innerHTML = "ClickMe!";
 scanButton.addEventListener("click", e => {
-  scanTag()
+  
 });
 document.body.appendChild(scanButton);
 
-
 /*
  * Prototype, fully copied from https://web.dev/nfc/
- */
+
 async function scanTag() {
   try {
     const status = await navigator.permissions.query({ name: 'nfc'});
@@ -45,3 +46,4 @@ async function scanTag() {
     alert("NFC is not supported.");
   }
 }
+*/
