@@ -1,7 +1,5 @@
---------------------------------------------------------------------------------
 ## Deliverable 1
 
---------------------------------------------------------------------------------
 
 ### Daniel (Design)
 
@@ -21,10 +19,8 @@ in the meantime.
 Unfortunately he left the group, but before he did so, he supported us with a
 few sketches, that may be used in the future process of the project.
 
---------------------------------------------------------------------------------
 ## Deliverable 2
 
---------------------------------------------------------------------------------
 
 ### NFC-Reader
 
