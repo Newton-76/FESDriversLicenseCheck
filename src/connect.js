@@ -5,9 +5,10 @@
  * Author: Denis Neumann, 1308358
  */
 
-let rfid = 3005;
+let rfid = 2409;
 let mysql = require("mysql");
-let sqlQuery = "SELECT * FROM fahrzeug WHERE RFID = ?"
+let sqlQuery = "SELECT * FROM fahrzeug WHERE RFID = ?";
+//let sqlQuery = "SELECT * FROM fahrzeug";
 
 // Credentials of the own server need to be updated!
 let connection = mysql.createConnection({
@@ -23,6 +24,7 @@ connection.connect(function(error) {
   }
   console.log("Connected to server:)");
   connection.query(sqlQuery, [rfid], function(error, result, fields) {
+  //connection.query(sqlQuery, function(error, result, fields) {
     if (error) {
       return console.error("Error occured: " + error.message);
     }
