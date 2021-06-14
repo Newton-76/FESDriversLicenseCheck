@@ -1,13 +1,13 @@
 const CACHE_NAME = "cache";
 const ASSETS = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-  "/src/app.js",
-  "/img/apple-icon-180.png",
-  "/img/favicon.ico",
-  "/img/manifest-icon-192.png",
-  "/img/manifest-icon-512.png"
+  "/FESDriversLicenseCheck/",
+  "/FESDriversLicenseCheck/index.html",
+  "/FESDriversLicenseCheck/manifest.json",
+  "/FESDriversLicenseCheck/src/app.js",
+  "/FESDriversLicenseCheck/img/apple-icon-180.png",
+  "/FESDriversLicenseCheck/img/favicon.ico",
+  "/FESDriversLicenseCheck/img/manifest-icon-192.png",
+  "/FESDriversLicenseCheck/img/manifest-icon-512.png"
 ];
 
 self.addEventListener("install", event => {
