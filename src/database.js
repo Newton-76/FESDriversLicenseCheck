@@ -10,4 +10,20 @@
 window.indexedDB = window.indexedDB || window.mozIndexedDB ||
   window.webkitIndexedDB || window.msIndexedDB;
 
-  
+if (!window.indexedDB) {
+  alert("IndexedDB wird nicht von Ihrem Browser unterstützt!");
+} else {
+  var request = window.indexedDB.open("FESDatenbank", 1);
+
+  request.onupgradeneeded = e => {
+    alert("Datenbank wird erneuert...");
+  }
+
+  request.onsuccess = e => {
+    alert("Datenbank geladen.");
+  }
+
+  request.onerror = e => {
+    alert(e.target.error);
+  }
+}
