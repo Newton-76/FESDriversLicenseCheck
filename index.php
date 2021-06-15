@@ -26,6 +26,10 @@
     </div>
     <div class="w3-col w3-container" style="width:20%"> </div>
   </div>
+  <?php
+    require_once "/FESDriversLicenseCheck/src/database/connect.php";
+   ?>
+
 
   <script src="/FESDriversLicenseCheck/src/app.js"></script>
 </body>
