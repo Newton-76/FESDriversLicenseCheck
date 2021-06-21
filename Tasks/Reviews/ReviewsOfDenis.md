@@ -21,7 +21,6 @@ few sketches, that may be used in the future process of the project.
 
 ## Deliverable 2
 
-
 ### NFC-Reader
 
 In the beginning of Phase 2 of our project, I tried to implement a NFC reader,
@@ -43,3 +42,28 @@ Also i would rather recommend to implement the button functions in JavaScript
 rather than in HTML.
 Another suggestion would be to use the cascading style sheets to design the
 on screen items.
+
+## Deliverable 3
+
+### Implementation of the Design
+
+There are too many HTML pages. They are not necessary, as the scanned person
+or vehicle shouldn't be displayed anyways.
+The icons should be chosen wisely.
+I think it's better to use JavaScript for some functions of the buttons instead
+of just linking another HTML page to it.
+
+### MySQL
+
+Node.js is a way to use MySQL in JavaScript, but it's not available on web-browsers
+and mobile devices.
+MySQL is not compatible with JavaScript directly, but there is a way to translate datasets
+via PHP into JavaScript arrays.
+
+### NFC-Reader
+
+In the beginning we tried to run a NFC-Reader on an iPhone and also via HTTP
+connections.
+In the meantime we found out, that we need to use a secure connection via
+HTTPS and an Android phone that's able to read NFC-Tags.
+The most simple way to do so is using Github-pages.
