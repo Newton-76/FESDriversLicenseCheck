@@ -7,7 +7,6 @@ if ("serviceWorker" in navigator) {
 }
 
 
-/*
 // code by: https://gerritniezen.com/getting-started-with-web-nfc
 document.addEventListener('DOMContentLoaded', event => {
   const scanButton = document.getElementById('scan');
