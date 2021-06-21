@@ -14,3 +14,14 @@ At this point we are not able to use funtions for the reading of NFC Chips. We n
 ## Database
 We need to find a solution for the problem that, our PWA does not work with the actual settings. It seems like the problem is something with the initial SQL Statements.
 At the end we also need to find a solution for hosting the Database in the current architecture.
+
+# Deliverable 3
+
+## Design and UX
+At this point we need more experience in Javascript to implement animaton and functionality to the HTML Pages. We also need to communicate with the database functions.
+
+## NFC Reading Function
+NFC Reading is still not working on the Devices. We need to get a connection to our database functionalities and a working handler/code for the devices. 
+
+## Database
+PHP does not worked as we estimated. PHP was just static. HTTPS is not working at this point. Also the information that we can easily use it via GitHUb Pages does not worked for us. At this point we decided to use a local XAMPP Server and simulate everyything on the mobile phone.
