@@ -11,27 +11,19 @@
   <link rel="apple-touch-icon" href="/FESDriversLicenseCheck/img/apple-icon-180.png">
   <link rel="icon" href="/FESDriversLicenseCheck/img/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
-
   <div class="w3-col w3-container" style="width:20%"> </div>
   <div class="w3-col w3-container" style="width:80%">
     <img src="/FESDriversLicenseCheck/img/fes.png" alt="Lights" class="w3-image">
     <h5> Geben Sie die 4-stellige PIN ein und drücken Sie auf bestätigen </h5>
     <input type="number" id="password" name="password" pattern="[0-9]{4}" maxlength="4" style="-webkit-text-security: disc;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
     <div class="w3-container">
-      <a href="scanpage.html" class="w3-btn w3-blue">Bestätigen</a>
+      <a href="main_menu.php" class="w3-btn w3-blue">Bestätigen</a>
     </div>
     <div class="w3-col w3-container" style="width:20%"> </div>
   </div>
-  <?php
-    require_once "/FESDriversLicenseCheck/src/database/connect.php";
-   ?>
-
-
   <script src="/FESDriversLicenseCheck/src/app.js"></script>
 </body>
-
 </html>

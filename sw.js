@@ -1,7 +1,7 @@
 const CACHE_NAME = "cache";
 const ASSETS = [
   "/FESDriversLicenseCheck/",
-  "/FESDriversLicenseCheck/index.html",
+  "/FESDriversLicenseCheck/index.php",
   "/FESDriversLicenseCheck/manifest.json",
   "/FESDriversLicenseCheck/src/app.js",
   "/FESDriversLicenseCheck/img/apple-icon-180.png",
