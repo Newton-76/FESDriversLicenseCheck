@@ -26,6 +26,29 @@ pattern="[0-9]{4}"
 maxlength="4"
 style="-webkit-text-security: disc;"
 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+javascript:async function scanTag() {
+  if ("NDEFReader" in window) {
+    const ndef = new NDEFReader();
+    ndef.scan().then(() => {
+      console.log("Scan started successfully.");
+      ndef.onreadingerror = () => {
+        console.log("Cannot read data from the NFC tag. Try another one?");
+      };
+      ndef.onreading = event => {
+        const message = event.message;
+        for (const record of message.records) {
+          console.log("Record type:  " + record.recordType);
+          console.log("MIME type:    " + record.mediaType);
+          alert("Record id:    " + record.id);
+        }
+      };
+    }).catch(error => {
+      console.log(`Error! Scan failed to start: ${error}.`);
+    });
+  } else {
+    alert("NFC is not supported.");
+  }
+}"
 >
 <div class="w3-container">
 <a href="scanpage.html" class="w3-btn w3-blue">Bestätigen</a>
