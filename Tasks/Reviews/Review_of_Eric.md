@@ -24,4 +24,4 @@ At this point we need more experience in Javascript to implement animaton and fu
 NFC Reading is still not working on the Devices. We need to get a connection to our database functionalities and a working handler/code for the devices. 
 
 ## Database
-PHP does not worked as we estimated. PHP was just static. HTTPS is not working at this point. Also the information that we can easily use it via GitHUb Pages does not worked for us. At this point we decided to use a local XAMPP Server and simulate everyything on the mobile phone.
+PHP does not worked as we estimated. PHP is dynamic but GitHUb Pages just worked static. HTTPS is not working at this point. Also the information that we can easily use it via GitHUb Pages does not worked for us. At this point we decided to use a local XAMPP Server and simulate everyything on the mobile phone.
