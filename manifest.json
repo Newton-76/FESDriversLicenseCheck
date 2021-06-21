@@ -1,7 +1,7 @@
 {
   "name": "FES Driver's License Check Application",
   "short_name": "LicenseCheck",
-  "start_url": "https://newton-76.github.io/FESDriversLicenseCheck/",
+  "start_url": "/FESDriversLicenseCheck/index.php",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#040521",
