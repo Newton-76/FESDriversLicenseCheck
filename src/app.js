@@ -6,7 +6,7 @@ if ("serviceWorker" in navigator) {
   //    .catch((error) => console.log("Registration failed: ", error));
 }
 
-
+/*
 // code by: https://gerritniezen.com/getting-started-with-web-nfc
 document.addEventListener('DOMContentLoaded', event => {
   const scanButton = document.getElementById('scan');
@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', event => {
     document.getElementById("p1").innerHTML = event.serialNumber;
   };
 });
+*/
 
 
 
 
 
-/*
 const scanButton = document.createElement("button");
 const ndef = new NDEFReader();
 scanButton.innerHTML = "Click me!";
@@ -40,7 +40,7 @@ scanButton.addEventListener("click", e => {
 });
 document.body.appendChild(scanButton);
 
-/*
+
  * Prototype, fully copied from https://web.dev/nfc/
 
 async function scanTag() {
@@ -73,4 +73,4 @@ async function scanTag() {
     alert("NFC is not supported.");
   }
 }
-*/
+
