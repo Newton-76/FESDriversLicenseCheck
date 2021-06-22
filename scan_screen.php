@@ -10,6 +10,7 @@
   <link rel="apple-touch-icon" href="/FESDriversLicenseCheck/img/apple-icon-180.png">
   <link rel="icon" href="/FESDriversLicenseCheck/img/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="/FESDriversLicenseCheck/src/scanner.js"></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
   // Adapted the hints and instructions given by https://stackoverflow.com/questions/23740548/how-do-i-pass-variables-and-data-from-php-to-javascript
   // Author: Denis Neumann, 1308358
     var fahrzeuge = <?php
-      $query = "SELECT * FROM Fahrzeug";
+      $query = "SELECT * FROM Fahrzeuge";
       $result = mysqli_query($link, $query) or die(mysqli_error($link));
       // create data object
       $data = array();
@@ -61,41 +62,123 @@
       }
       echo json_encode($data, JSON_HEX_TAG);
     ?>;
-    //debugging:
-      var i = 1;
-      var id = fahrer[0]['Fuehrerschein' + i + '_ID'];
-      var fid = 0;
-
-      for(var x = 0; x < (fuehrerscheine.length - 1); x++){
-        if(fuehrerscheine[x]['id'] === id) fid = x;
+    //debug and demonstration:
+    for(var i = 0; i < (fahrer.length - 1); i++){
+      var j = 1;
+      console.log("Name: " + fahrer[i]['Nachname']);
+      while(fahrer[i]['Fuehrerschein' + j + '_ID'] != null){
+        var fid = (fahrer[i]['Fuehrerschein' + j + '_ID'] - 1);
+        console.log("Fuehrerscheinklasse: " + fuehrerscheine[fid]['Klasse']);
+        console.log("Gueltig bis: " + fahrer[i]['F' + j + '_Gueltigkeit']);
+        j++;
       }
-      console.log('Fahrer: ' + fahrer[0]['Nachname'] + '\nFuehrerscheinbeschreibung: ' + fuehrerscheine[fid]['Beschreibung']);
+      j = 1;
+      while(fahrer[i]['Qualifikation' + j + '_ID'] != null){
+        var qid = (fahrer[i]['Qualifikation' + j + '_ID'] - 1);
+        console.log("Qualifikation " + j + ": " + qualifikationen[qid]['Qualifikation']);
+        console.log("Gueltig bis: " + fahrer[i]['Q' + j + '_Gueltigkeit']);
+        j++;
+      }
+      console.log(" ");
+    }
+
+    for(var i = 0; i < (fahrzeuge.length - 1); i++){
+      console.log("Kennzeichen: " + fahrzeuge[i]['Kennzeichen']);
+      if(fahrzeuge[i]['Fuehrerschein_ID'] != null){
+        var fid = (fahrzeuge[i]['Fuehrerschein_ID'] - 1);
+        console.log("Benoetigte Fuehrerscheinklasse: " + fuehrerscheine[fid]['Klasse']);
+      } else{
+        console.log("Kein Fuehrerschein benoetigt.");
+      }
+      var j = 1;
+      while(fahrzeuge[i]['Qualifikation' + j + '_ID'] != null){
+        var qid = (fahrzeuge[i]['Qualifikation' + j + '_ID'] - 1);
+        console.log("Benoetigte Qualifikation: " + qualifikationen[qid]['Qualifikation']);
+        j++;
+      }
+      console.log(" ");
+    }
+// End of debug/demo
   </script>
 
+  <script>
+  //  Here the scanner needs to be started and return a RFID into var rfid
+  // Implementation of the comparison: Denis Neumann, 1308358
+  var ersteRFID = '04:4C:4D:52:17:3C:80';
+  var ersterScan = sucheFahrzeug(ersteRFID);
+  var istFahrzeug = false;
+  var istFahrer = false;
+  if(ersterScan === null){
+    ersterScan = sucheFahrer(ersteRFID);
+  } else{
+    istFahrzeug = true;
+  }
+  if(ersterScan === null){
+    alert("RFID nicht in der Datenbank vorhanden!");
+  } else{
+    istFahrer = true;
+  }
+
+  if(istFahrzeug || istFahrer){
+    var zweiteRFID = '04:0D:4C:52:17:3C:81';
+    var zweiterScan;
+    if(istFahrzeug){
+      zweiterScan = sucheFahrer(zweiteRFID);
+      if(zweiterScan === null) alert("Kein Fahrer gefunden!");
+    }
+    if(istFahrer){
+      zweiterScan = sucheFahrzeug(zweiteRFID);
+      if(zweiterScan === null) alert("Kein Fahrzeug gefunden!");
+    }
+    if(zweiterScan != null){
+      if(istFahrzeug){
+        var active = true;
+        if(!abgleichFuehrerschein(ersterScan['Fuehrerschein_ID'], zweiterScan)){
+          alert("Fuererschein Klasse " + fuehrerscheine[(ersterScan['Fuehrerschein_ID'] - 1)]['Klasse'] + " nicht vorhanden!");
+          active = false;
+        }
+        var i = 1;
+        while(ersterScan['Qualifikation' + i + '_ID'] != null){
+          if(active){
+            if(!abgleichQualifikation(ersterScan['Qualifikation' + i + '_ID'], zweiterScan)){
+              alert(qualifikationen[(ersterScan['Qualifikation' + i + '_ID'] - 1)]['Qualifikation'] + " nicht vorhanden!");
+              active = false;
+            }
+            i++;
+          }
+        }
+        if(active) alert("Sie koennen die Schluessel beruhigt abgeben :) ");
+      }
+      if(istFahrer){
+        var active = true;
+        if(!abgleichFuehrerschein(zweiterScan['Fuehrerschein_ID'], ersterScan)){
+          alert("Fuererschein Klasse " + fuehrerscheine[(zweiterScan['Fuehrerschein_ID'] - 1)]['Klasse'] + "nicht vorhanden!");
+          active = false;
+        }
+        var i = 1;
+        while(zweiterScan['Qualifikation' + i + '_ID'] != null){
+          if(active){
+            if(!abgleichQualifikation(zweiterScan['Qualifikation' + i + '_ID'], ersterScan)){
+              alert(qualifikationen[(zweiterScan['Qualifikation' + i + '_ID'] - 1)]['Qualifikation'] + " nicht vorhanden!");
+              active = false;
+            }
+            i++;
+          }
+        }
+        if(active) alert("Sie koennen die Schluessel beruhigt abgeben :) ");
+      }
+    }
+  }
+
+  </script>
+
+
   <div class="w3-bar w3-border" >
-    <a href="/FESDriversLicenseCheck/main_menu.php" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>
+    <a href="/FESDriversLicenseCheck/main_menu.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>
     <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
     <a href="/FESDriversLicenseCheck/personen.html" class="w3-bar-item w3-button"><i class="fa fa-male"></i></a>
     <a href="#" class="w3-bar-item w3-button"><i class="fa fa-car"></i></a>
-    <a href="/FESDriversLicenseCheck/index.php" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i></a>
-  </div>
-
-  <div class="w3-display-container" style="height:550px;">
-    <div class="w3-card-4 w3-light-grey" style="width:40%">
-      <div class="w3-container w3-center">
-        <h3>Gescannte Person</h3>
-        <img src="/FESDriversLicenseCheck/img/Personen/Download.png" alt="Avatar" style="width:80%">
-        <h5>John Doe</h5>
-        <div class="w3-section">
-          <button class="w3-button w3-green">Accept</button>
-          <button class="w3-button w3-red">Decline</button>
-        </div>
-      </div>
-    </div>
-    <div class="w3-display-bottommiddle"><a href="/FESDriversLicenseCheck/scan2.html"><img src="/FESDriversLicenseCheck/img/inapp_icons/050-focus.png"</div>
-  </div>
-  <div class="w3-container">
-
+    <a href="/FESDriversLicenseCheck/index.html" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i></a>
   </div>
 </body>
 </html>
