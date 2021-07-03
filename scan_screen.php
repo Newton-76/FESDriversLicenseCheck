@@ -10,7 +10,8 @@
   <link rel="apple-touch-icon" href="/FESDriversLicenseCheck/img/apple-icon-180.png">
   <link rel="icon" href="/FESDriversLicenseCheck/img/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="/FESDriversLicenseCheck/src/scanner.js"></script>
+  <script src="/FESDriversLicenseCheck/src/javascript_executions/scanner.js"></script>
+  <script src="/FESDriversLicenseCheck/src/javascript_executions/compare.js"></script>
 </head>
 
 <body>
@@ -19,49 +20,10 @@
   <script>
   // Adapted the hints and instructions given by https://stackoverflow.com/questions/23740548/how-do-i-pass-variables-and-data-from-php-to-javascript
   // Author: Denis Neumann, 1308358
-    var fahrzeuge = <?php
-      $query = "SELECT * FROM Fahrzeuge";
-      $result = mysqli_query($link, $query) or die(mysqli_error($link));
-      // create data object
-      $data = array();
-      while(true){
-        if(($data[] = mysqli_fetch_array($result)) === null) break;
-      }
-      echo json_encode($data, JSON_HEX_TAG);
-    ?>;
-
-    var fahrer = <?php
-      $query = "SELECT * FROM Fahrer";
-      $result = mysqli_query($link, $query) or die(mysqli_error($link));
-      // create data object
-      $data = array();
-      while(true){
-        if(($data[] = mysqli_fetch_array($result)) === null) break;
-      }
-      echo json_encode($data, JSON_HEX_TAG);
-    ?>;
-
-    var fuehrerscheine = <?php
-      $query = "SELECT * FROM Fuehrerscheine";
-      $result = mysqli_query($link, $query) or die(mysqli_error($link));
-      // create data object
-      $data = array();
-      while(true){
-        if(($data[] = mysqli_fetch_array($result)) === null) break;
-      }
-      echo json_encode($data, JSON_HEX_TAG);
-    ?>;
-
-    var qualifikationen = <?php
-      $query = "SELECT * FROM Qualifikationen";
-      $result = mysqli_query($link, $query) or die(mysqli_error($link));
-      // create data object
-      $data = array();
-      while(true){
-        if(($data[] = mysqli_fetch_array($result)) === null) break;
-      }
-      echo json_encode($data, JSON_HEX_TAG);
-    ?>;
+    var fahrzeuge = <?php require "loadFahrzeuge.php" ?>;
+    var fahrer = <?php require "loadFahrer.php" ?>;
+    var fuehrerscheine = <?php require "loadFuehrerscheine.php" ?>;
+    var qualifikationen = <?php require "loadQualifikationen.php" ?>;
 /*debug and demonstration:
     for(var i = 0; i < (fahrer.length - 1); i++){
       var j = 1;
@@ -100,9 +62,8 @@
     }
 // End of debug/demo
 */
+  startComparing();
   </script>
-
-  <script src="/FESDriversLicenseCheck/src/compare.js"></script>
 
   <div class="w3-bar w3-border" >
     <a href="/FESDriversLicenseCheck/main_menu.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>

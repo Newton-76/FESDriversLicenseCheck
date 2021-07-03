@@ -3,7 +3,7 @@ const ASSETS = [
   "/FESDriversLicenseCheck/",
   "/FESDriversLicenseCheck/index.html",
   "/FESDriversLicenseCheck/manifest.json",
-  "/FESDriversLicenseCheck/src/app.js",
+  "/FESDriversLicenseCheck/src/javascript_executions/app.js",
   "/FESDriversLicenseCheck/img/apple-icon-180.png",
   "/FESDriversLicenseCheck/img/favicon.ico",
   "/FESDriversLicenseCheck/img/manifest-icon-192.png",
