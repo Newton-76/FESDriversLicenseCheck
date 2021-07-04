@@ -1,5 +1,5 @@
 // code by: https://gerritniezen.com/getting-started-with-web-nfc
-document.addEventListener('DOMContentLoaded', event => {
+/*document.addEventListener('DOMContentLoaded', event => {
   const scanButton = document.getElementById('scan');
   const reader = new NDEFReader();
 
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', event => {
     console.log('Event:', event);
     document.getElementById("p1").innerHTML = event.serialNumber;
   };
-});
+});*/
 
 
 
