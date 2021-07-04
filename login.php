@@ -50,7 +50,7 @@
           echo '<form action="'. $url .'" method="POST">';
           echo '<p>Kennwort:<br>';
           echo '<input type="password" name="kennwort" value="">';
-          echo '<p><background-color: #008CBA; input type="Submit" value="einloggen">';
+          echo '<p><input type="Submit" value="einloggen" class="w3-btn w3-blue" >';
           echo '</form>';
 
           // Programm wird hier beendet, denn Benutzer ist noch nicht
