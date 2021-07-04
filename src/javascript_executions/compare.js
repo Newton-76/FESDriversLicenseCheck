@@ -99,10 +99,16 @@ function abgleichFuehrerschein(maschine, mensch){
   var i = 1;
   while(mensch['Fuehrerschein' + i + '_ID'] != null){
     if(maschine === mensch['Fuehrerschein' + i + '_ID']){
-      //Validity needs to be compared with today's date here
-      // if valid:
-      return true;
-      // else return false;
+      var gueltigkeit = mensch['F' + i + '_Gueltigkeit'];
+      var datum = gueltigkeit.split('-');
+      var heute = new Date();
+      if(heute.getFullYear() <= datum[0]){
+        if(heute.getMonth() <= datum[1]){
+          if(heute.getDate() <= datum[2]){
+            return true;
+          }
+        }
+      }
     }
     i++;
   }
@@ -113,10 +119,16 @@ function abgleichQualifikation(maschine, mensch){
   var i = 1;
   while(mensch['Qualifikation' + i + '_ID'] != null){
     if(maschine === mensch['Qualifikation' + i + '_ID']){
-      //Validity needs to be compared with today's date here
-      // if valid:
-      return true;
-      // else return false;
+      var gueltigkeit = mensch['Q' + i + '_Gueltigkeit'];
+      var datum = gueltigkeit.split('-');
+      var heute = new Date();
+      if(heute.getFullYear() <= parseInt(datum[0])){
+        if(heute.getMonth() <= parseInt(datum[1])){
+          if(heute.getDate() <= parseInt(datum[2])){
+            return true;
+          }
+        }
+      }
     }
     i++;
   }
