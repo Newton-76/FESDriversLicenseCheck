@@ -97,9 +97,7 @@ function sucheFahrer(id){
 
 function abgleichFuehrerschein(maschine, mensch){
   var i = 1;
-  alert("Führerscheinvergleich start");
   while(mensch['Fuehrerschein' + i + '_ID'] != null){
-    alert("Einstieg while-Schleife");
     if(maschine === mensch['Fuehrerschein' + i + '_ID']){
       var gueltigkeit = mensch['F' + i + '_Gueltigkeit'];
       var datum = gueltigkeit.split('-');
