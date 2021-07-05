@@ -7,16 +7,16 @@
   <meta name="theme-color" content="#040521">
   <title>FES Driver's License Check</title>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="manifest" href="/FESDriversLicenseCheck/manifest.json">
-  <link rel="apple-touch-icon" href="/FESDriversLicenseCheck/img/apple-icon-180.png">
-  <link rel="icon" href="/FESDriversLicenseCheck/img/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/img/apple-icon-180.png">
+  <link rel="icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <div class="w3-col w3-container" style="width:20%"> </div>
   <div class="w3-col w3-container" style="width:80%">
-    <img src="/FESDriversLicenseCheck/img/fes.png" alt="Lights" class="w3-image">
+    <img src="/img/fes.png" alt="Lights" class="w3-image">
     <?php
     session_start();
 
@@ -62,7 +62,7 @@
     </div>
     <div class="w3-col w3-container" style="width:20%"> </div>
   </div>
-  <script src="/FESDriversLicenseCheck/src/javascript_executions/app.js"></script>
+  <script src="/src/javascript_executions/app.js"></script>
 </body>
 
 </html>
