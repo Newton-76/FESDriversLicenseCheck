@@ -1,13 +1,7 @@
 //  Here the scanner needs to be started and return a RFID into var rfid
 // Implementation of the comparison: Denis Neumann, 1308358
 
-var ersteRFID = null;
-
 function startComparing(){
-  //wait for scan here
-  while(ersteRFID === null){
-    sleep(100);
-  }
   var ersterScan = sucheFahrzeug(ersteRFID);
   var istFahrzeug = false;
   var istFahrer = false;
@@ -23,8 +17,6 @@ function startComparing(){
   }
 
   if(istFahrzeug || istFahrer){
-    //wait for scan here
-    var zweiteRFID = '04:0D:4C:52:17:3C:81'; //supposed to be delivered by the scanner
     var zweiterScan;
     if(istFahrzeug){
       zweiterScan = sucheFahrer(zweiteRFID);
