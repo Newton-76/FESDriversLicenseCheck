@@ -97,13 +97,19 @@ function sucheFahrer(id){
 
 function abgleichFuehrerschein(maschine, mensch){
   var i = 1;
+  alert("Führerscheinvergleich start");
   while(mensch['Fuehrerschein' + i + '_ID'] != null){
+    alert("Einstieg while-Schleife");
     if(maschine === mensch['Fuehrerschein' + i + '_ID']){
       var gueltigkeit = mensch['F' + i + '_Gueltigkeit'];
       var datum = gueltigkeit.split('-');
       var heute = new Date();
-      if(heute.getFullYear() <= datum[0]){
-        if(heute.getMonth() <= datum[1]){
+      if(heute.getFullYear() < datum[0]){
+        return true;
+      } else if(heute.getFullYear() === datum[0]) {
+        if(heute.getMonth() < datum[1]){
+          return true;
+        } else if(heute.getMonth() === datum[1]){
           if(heute.getDate() <= datum[2]){
             return true;
           }
@@ -122,9 +128,13 @@ function abgleichQualifikation(maschine, mensch){
       var gueltigkeit = mensch['Q' + i + '_Gueltigkeit'];
       var datum = gueltigkeit.split('-');
       var heute = new Date();
-      if(heute.getFullYear() <= parseInt(datum[0])){
-        if(heute.getMonth() <= parseInt(datum[1])){
-          if(heute.getDate() <= parseInt(datum[2])){
+      if(heute.getFullYear() < datum[0]){
+        return true;
+      } else if(heute.getFullYear() === datum[0]) {
+        if(heute.getMonth() < datum[1]){
+          return true;
+        } else if(heute.getMonth() === datum[1]){
+          if(heute.getDate() <= datum[2]){
             return true;
           }
         }
