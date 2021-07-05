@@ -10,7 +10,6 @@
   <link rel="apple-touch-icon" href="/img/apple-icon-180.png">
   <link rel="icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="/src/javascript_executions/scanner.js"></script>
   <script src="/src/javascript_executions/compare.js"></script>
   <script src="/src/javascript_executions/addPerson.js"></script>
 </head>
@@ -27,8 +26,10 @@
     var qualifikationen = <?php require "loadQualifikationen.php"; ?>;
 
   // Brought data back to php with the help of https://www.w3schools.com/js/js_cookies.asp and https://www.google.com/amp/s/www.geeksforgeeks.org/how-to-pass-javascript-variables-to-php/amp/
-    startAdding();
+    var id = null;
   </script>
+  <button id="scan">Click to start scanning!</button>
+  <script src="/src/javascript_executions/addingScanner.js"></script>
 
   <div class="w3-display-right"><a href="/person_added.php"><img src="/img/inapp_icons/047-user.png"> </div>
 

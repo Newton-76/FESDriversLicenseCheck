@@ -10,7 +10,6 @@
   <link rel="apple-touch-icon" href="/img/apple-icon-180.png">
   <link rel="icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="/src/javascript_executions/scanner.js"></script>
   <script src="/src/javascript_executions/compare.js"></script>
 </head>
 
@@ -62,8 +61,11 @@
     }
 // End of debug/demo
 */
-  startComparing();
+  var ersteRFID = null;
+  var zweiteRFID = null;
   </script>
+  <button id="scan">Click to start scanning!</button>
+  <script src="/src/javascript_executions/scanner.js"></script>
 
   <div class="w3-bar w3-border" >
     <a href="/main_menu.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>

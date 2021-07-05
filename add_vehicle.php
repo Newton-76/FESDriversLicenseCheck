@@ -27,8 +27,10 @@
     var qualifikationen = <?php require "loadQualifikationen.php"; ?>;
 
   // Brought data back to php with the help of https://www.w3schools.com/js/js_cookies.asp and https://www.google.com/amp/s/www.geeksforgeeks.org/how-to-pass-javascript-variables-to-php/amp/
-    startAdding();
+  var id = null;
   </script>
+  <button id="scan">Click to start scanning!</button>
+  <script src="/src/javascript_executions/addingScanner.js"></script>
 
   <div class="w3-display-left"><a href="/vehicle_added.php"><img src="/img/inapp_icons/030-creditcard.png"></div>
 

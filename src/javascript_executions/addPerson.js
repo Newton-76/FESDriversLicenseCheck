@@ -19,8 +19,6 @@ class Person {
 
 
 function startAdding() {
-  // wait for scan here
-  var id = "01:02:03:04:05:06:07"; //supposed to be delivered by the scanner
   if (sucheFahrer(id) != null || sucheFahrzeug(id) != null) alert("RFID bereits in Verwendung!");
   else {
     const person = new Person();
