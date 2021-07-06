@@ -65,6 +65,8 @@ function startComparing(){
       }
     }
   }
+  ersteRFID = null;
+  zweiteRFID = null;
 }
 
 function sucheFahrzeug(id){
