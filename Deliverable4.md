@@ -69,20 +69,20 @@ Reviews are stored in: \FESDriversLicenseCheck\Tasks\Reviews
 ### Who did what?
 
 Daniel:
--Supposed to test the RFID-Tag reader and let the app run on HTTPS
-(-)Help Eric with the design of the app
+-   Supposed to test the RFID-Tag reader and let the app run on HTTPS
+-   Help Eric with the design of the app
 
 Denis:
-+Create database
-+Connect MySQL data with the app
-+Make php code executable
-+Compare drivers and vehicles
-+Add new dirvers and vehicles to the database
-+Find a way to implement and run the scanner and receive the tag's ID
-(-)Edit datasets
-(-)Connect functionality with design (as soon as design is done)
++   Create database
++   Connect MySQL data with the app
++   Make php code executable
++   Compare drivers and vehicles
++   Add new dirvers and vehicles to the database
++   Find a way to implement and run the scanner and receive the tag's ID
+-   Edit datasets
+-   Connect functionality with design (as soon as design is done)
 
 Eric:
-+Test the RFID reading function on an Android device
-+Check PIN code at login screen
-(-)Design
++   Test the RFID reading function on an Android device
++   Check PIN code at login screen
+-   Design
