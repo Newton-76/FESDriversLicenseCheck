@@ -5,11 +5,7 @@ class Fahrzeug {
   constructor() {
     this.rfid;
     this.kennzeichen;
-    this.bezeichnung;
-    this.fuehrerscheinIDs = [];
-    this.qualifikationIDs = [];
-    this.anzahlQualifikationsArten;
-    this.anzahlQualifikationen;
+    this.fahrzeugart;
   }
 }
 
@@ -20,14 +16,14 @@ function startAdding() {
     const fahrzeug = new Fahrzeug();
     fahrzeug.rfid = id;
     fahrzeug.kennzeichen = prompt("Bitte geben Sie das Kennzeichen ein:", "F-ES ");
-    fahrzeug.bezeichnung = prompt("Um was fuer ein Fahrzeug handelt es sich?", "Fahrzeugart");
-    addLicenses(fahrzeug);
-    addQualifications(fahrzeug);
+    fahrzeug.fahrzeugart = 1; //Choose from dropdown list
     console.log(fahrzeug);
     document.cookie = "fahrzeug=" + JSON.stringify(fahrzeug);
   }
 }
 
+
+ /* Not needed here anymore, but maybe useful in other usecases
 function addLicenses(fahrzeug) {
   var i = 0;
   var set = false;
@@ -53,3 +49,4 @@ function addQualifications(fahrzeug) {
   fahrzeug.anzahlQualifikationsArten = i;
   fahrzeug.anzahlQualifikationen = j;
 }
+*/

@@ -21,6 +21,7 @@
   // Author: Denis Neumann, 1308358
     var fahrzeuge = <?php require "loadFahrzeuge.php" ?>;
     var fahrer = <?php require "loadFahrer.php" ?>;
+    var fahrzeugklassen = <?php require "loadFahrzeugklassen.php" ?>; 
     var fuehrerscheine = <?php require "loadFuehrerscheine.php" ?>;
     var qualifikationen = <?php require "loadQualifikationen.php" ?>;
 /*debug and demonstration:
@@ -65,7 +66,7 @@
   var zweiteRFID = null;
   </script>
   <button id="scan">Click to start scanning!</button>
-  <script src="/src/javascript_executions/scanner.js"></script>
+  <script src="/src/javascript_executions/compareScanner.js"></script>
 
   <div class="w3-bar w3-border" >
     <a href="/main_menu.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>

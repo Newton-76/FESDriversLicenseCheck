@@ -1,7 +1,7 @@
 //  Here the scanner needs to be started and return a RFID into var rfid
 // Implementation of the comparison: Denis Neumann, 1308358
 
-function startComparing(){
+function firstScan(){
   var ersterScan = sucheFahrzeug(ersteRFID);
   var istFahrzeug = false;
   var istFahrer = false;
@@ -12,19 +12,31 @@ function startComparing(){
   }
   if(ersterScan === null){
     alert("RFID nicht in der Datenbank vorhanden!");
+    ersteRFID = null;
   } else{
     istFahrer = true;
   }
+}
 
+
+function startComparing(){
   if(istFahrzeug || istFahrer){
     var zweiterScan;
     if(istFahrzeug){
       zweiterScan = sucheFahrer(zweiteRFID);
-      if(zweiterScan === null) alert("Kein Fahrer gefunden!");
+      if(zweiterScan === null){
+        alert("Kein Fahrer gefunden!");
+        ersteRFID = null;
+        zweiteRFID = null;
+      }
     }
     if(istFahrer){
       zweiterScan = sucheFahrzeug(zweiteRFID);
-      if(zweiterScan === null) alert("Kein Fahrzeug gefunden!");
+      if(zweiterScan === null){
+        alert("Kein Fahrzeug gefunden!");
+        ersteRFID = null;
+        zweiteRFID = null;
+      }
     }
     if(zweiterScan != null){
       if(istFahrzeug){

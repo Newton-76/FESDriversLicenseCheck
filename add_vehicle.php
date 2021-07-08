@@ -22,8 +22,7 @@
   // Author: Denis Neumann, 1308358
     var fahrzeuge = <?php require "loadFahrzeuge.php"; ?>;
     var fahrer = <?php require "loadFahrer.php"; ?>;
-    var fuehrerscheine = <?php require "loadFuehrerscheine.php"; ?>;
-    var qualifikationen = <?php require "loadQualifikationen.php"; ?>;
+    var fahrzeugklassen = <?php require "loadFahrzeugklassen.php" ?>;
 
   // Brought data back to php with the help of https://www.w3schools.com/js/js_cookies.asp and https://www.google.com/amp/s/www.geeksforgeeks.org/how-to-pass-javascript-variables-to-php/amp/
   var id = null;

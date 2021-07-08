@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', event => {
       console.log('Event:', event);
       if(ersteRFID === null){
         ersteRFID = event.serialNumber;
+        firstScan();
       } else{
         zweiteRFID = event.serialNumber;
         startComparing();
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', event => {
   }
 });
 
-/*
+/* Test without button --> Android's own NFC reader interrupts
 if ("NDEFReader" in window) {
   const reader = new NDEFReader();
 } else {
