@@ -22,7 +22,7 @@
   // Author: Denis Neumann, 1308358
     var fahrzeuge = <?php require "loadFahrzeuge.php"; ?>;
     var fahrer = <?php require "loadFahrer.php"; ?>;
-    var fahrzeugklassen = <?php require "loadFahrzeugklassen.php" ?>; 
+    var fahrzeugklassen = <?php require "loadFahrzeugklassen.php" ?>;
     var fuehrerscheine = <?php require "loadFuehrerscheine.php"; ?>;
     var qualifikationen = <?php require "loadQualifikationen.php"; ?>;
 
@@ -36,9 +36,6 @@
 
   <div class="w3-bar w3-border" >
     <a href="/main_menu.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>
-    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
-    <a href="/personen.html" class="w3-bar-item w3-button"><i class="fa fa-male"></i></a>
-    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-car"></i></a>
     <a href="/index.html" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i></a>
   </div>
 </body>

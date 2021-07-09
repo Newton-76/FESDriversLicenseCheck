@@ -11,9 +11,10 @@
   <link rel="icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="/src/javascript_executions/compare.js"></script>
+  <script src="/src/javascript_executions/compareScanner.js"></script>
 </head>
 
-<body>
+<body onload="startScan()">
   <?php require_once "connect.php"; ?>
 
   <script>
@@ -21,7 +22,7 @@
   // Author: Denis Neumann, 1308358
     var fahrzeuge = <?php require "loadFahrzeuge.php" ?>;
     var fahrer = <?php require "loadFahrer.php" ?>;
-    var fahrzeugklassen = <?php require "loadFahrzeugklassen.php" ?>; 
+    var fahrzeugklassen = <?php require "loadFahrzeugklassen.php" ?>;
     var fuehrerscheine = <?php require "loadFuehrerscheine.php" ?>;
     var qualifikationen = <?php require "loadQualifikationen.php" ?>;
 /*debug and demonstration:
@@ -65,14 +66,10 @@
   var ersteRFID = null;
   var zweiteRFID = null;
   </script>
-  <button id="scan">Click to start scanning!</button>
-  <script src="/src/javascript_executions/compareScanner.js"></script>
+  <!--button id="scan">Click to start scanning!</button-->
 
   <div class="w3-bar w3-border" >
     <a href="/main_menu.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>
-    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
-    <a href="/personen.html" class="w3-bar-item w3-button"><i class="fa fa-male"></i></a>
-    <a href="#" class="w3-bar-item w3-button"><i class="fa fa-car"></i></a>
     <a href="/index.html" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i></a>
   </div>
 </body>
