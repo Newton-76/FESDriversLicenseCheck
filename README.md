@@ -21,15 +21,15 @@ automatically be redirected to "https://localhost" and the root of localhost wil
 to your accessible IP-Address in the following extract:
 
   <VirtualHost *:80>
-  
+
    DocumentRoot "C:\xampp\htdocs\FESDriversLicenseCheck"
-   
+
    ServerName fes.test
-   
+
    ServerAlias *.fes.test
-   
+
    Redirect permanent / https://127.0.0.1
-   
+
   </VirtualHost>
 
 - You can use any kind of MySQL environment you like, we went with the MySQL Workbench, because

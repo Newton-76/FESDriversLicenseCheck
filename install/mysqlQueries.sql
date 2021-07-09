@@ -67,12 +67,6 @@ Fahrzeug_ID INT UNSIGNED,
 FOREIGN KEY(Fahrzeug_ID) REFERENCES Fahrzeugklassen(id)
 );
 
-INSERT INTO Fahrzeuge
-VALUES('F0:00:00:00:00:00:00', 'F-ES 123', 1),
-('E0:00:00:00:00:00:00', 'F-ES 321', 2),
-('D0:00:00:00:00:00:00', 'F-ES 815', 3)
-;
-
 CREATE TABLE Fahrer (
 RFID VARCHAR(20) NOT NULL PRIMARY KEY,
 Vorname VARCHAR(50) NOT NULL,
@@ -126,21 +120,3 @@ Qualifikation5_ID INT UNSIGNED,
 FOREIGN KEY(Qualifikation5_ID) REFERENCES Qualifikationen(id),
 Q5_Gueltigkeit DATE
 );
-
-INSERT INTO Fahrer (RFID, Vorname, Nachname, Fuehrerschein1_ID, F1_Gueltigkeit, Qualifikation1_ID, Q1_Gueltigkeit, Qualifikation2_ID, Q2_Gueltigkeit)
-VALUES ('00:00:00:00:00:00:00', 'Denis', 'Neumann', 1, '2028-02-07', 3, '2021-08-05', 4, '2022-04-12'),
-('00:00:00:00:00:00:01', 'Staplerfahrer', 'Klaus', (SELECT id FROM Fuehrerscheine WHERE Klasse = "L"), '2025-05-05', (SELECT id FROM Qualifikationen WHERE Qualifikation = 'Schulung "Verkehrssicherheit auf dem Betriebsgelände"'), '2022-05-05', NULL, NULL),
-('00:00:00:00:00:00:02', 'Ex-Staplerfahrer', 'Klaus', (SELECT id FROM Fuehrerscheine WHERE Klasse = "L"), '2020-05-05', (SELECT id FROM Qualifikationen WHERE Qualifikation = 'Schulung "Verkehrssicherheit auf dem Betriebsgelände"'), '2020-05-05', NULL, NULL)
-;
-
-INSERT INTO Fahrer
-VALUES('04:4C:4D:52:17:3C:80', 'Marvin', 'Ehrich', 1, '2025-01-01', 2, '2025-01-01', 3, '2025-01-01', 4, '2025-01-01', 5, '2025-01-01', 6, '2025-01-01', 7, '2025-01-01', 8, '2025-01-01', 9, '2025-01-01', 10, '2025-01-01', 11, '2025-01-01', 1, '2025-01-01', 2, '2025-01-01', 3, '2025-01-01', 4, '2025-01-01', 5, '2025-01-01');
-
-INSERT INTO Fahrzeuge (RFID, Kennzeichen, Bezeichnung, Fuehrerschein_ID)
-VALUES('04:0D:4C:52:17:3C:81', 'F-ES 69', 'Geschäftswagen', (SELECT id FROM Fuehrerscheine WHERE Klasse = 'B'));
-
-SELECT * FROM Fahrer;
-SELECT * FROM Fuehrerscheine;
-SELECT * FROM Fahrzeugklassen;
-SELECT * FROM Fahrzeuge;
-SELECT * FROM Qualifikationen;
