@@ -79,6 +79,7 @@ Denis:
 +   Compare drivers and vehicles (done)
 +   Add new dirvers and vehicles to the database (done)
 +   Find a way to implement and run the scanner and receive the tag's ID (done)
++   Write installation instruction (done)
 -   Edit datasets (in progress)
 -   Connect functionality with design (in progress, will be done as soon as design is done)
 
