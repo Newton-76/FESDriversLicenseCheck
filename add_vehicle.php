@@ -11,7 +11,7 @@
   <link rel="icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="/src/javascript_executions/compare.js"></script>
-  <script src="/src/javascript_executions/addPerson.js"></script>
+  <script src="/src/javascript_executions/addVehicle.js"></script>
 </head>
 
 <body>
@@ -23,16 +23,14 @@
     var fahrzeuge = <?php require "loadFahrzeuge.php"; ?>;
     var fahrer = <?php require "loadFahrer.php"; ?>;
     var fahrzeugklassen = <?php require "loadFahrzeugklassen.php" ?>;
-    var fuehrerscheine = <?php require "loadFuehrerscheine.php"; ?>;
-    var qualifikationen = <?php require "loadQualifikationen.php"; ?>;
 
   // Brought data back to php with the help of https://www.w3schools.com/js/js_cookies.asp and https://www.google.com/amp/s/www.geeksforgeeks.org/how-to-pass-javascript-variables-to-php/amp/
-    var id = null;
+  var id = null;
   </script>
   <button id="scan">Click to start scanning!</button>
   <script src="/src/javascript_executions/addingScanner.js"></script>
 
-  <div class="w3-display-right"><a href="/person_added.php"><img src="/img/inapp_icons/047-user.png"> </div>
+  <div class="w3-display-left"><a href="/vehicle_added.php"><img src="/img/inapp_icons/030-creditcard.png"></div>
 
   <div class="w3-bar w3-border" >
     <a href="/main_menu.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>

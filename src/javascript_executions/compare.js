@@ -1,9 +1,7 @@
 //  Here the scanner needs to be started and return a RFID into var rfid
 // Implementation of the comparison: Denis Neumann, 1308358
 
-function startComparing(){
-  //wait for scan here
-  var ersteRFID = '04:4C:4D:52:17:3C:80'; //supposed to be delivered by the scanner
+function firstScan(){
   var ersterScan = sucheFahrzeug(ersteRFID);
   var istFahrzeug = false;
   var istFahrer = false;
@@ -14,21 +12,31 @@ function startComparing(){
   }
   if(ersterScan === null){
     alert("RFID nicht in der Datenbank vorhanden!");
+    ersteRFID = null;
   } else{
     istFahrer = true;
   }
+}
 
+
+function startComparing(){
   if(istFahrzeug || istFahrer){
-    //wait for scan here
-    var zweiteRFID = '04:0D:4C:52:17:3C:81'; //supposed to be delivered by the scanner
     var zweiterScan;
     if(istFahrzeug){
       zweiterScan = sucheFahrer(zweiteRFID);
-      if(zweiterScan === null) alert("Kein Fahrer gefunden!");
+      if(zweiterScan === null){
+        alert("Kein Fahrer gefunden!");
+        ersteRFID = null;
+        zweiteRFID = null;
+      }
     }
     if(istFahrer){
       zweiterScan = sucheFahrzeug(zweiteRFID);
-      if(zweiterScan === null) alert("Kein Fahrzeug gefunden!");
+      if(zweiterScan === null){
+        alert("Kein Fahrzeug gefunden!");
+        ersteRFID = null;
+        zweiteRFID = null;
+      }
     }
     if(zweiterScan != null){
       if(istFahrzeug){
@@ -69,6 +77,8 @@ function startComparing(){
       }
     }
   }
+  ersteRFID = null;
+  zweiteRFID = null;
 }
 
 function sucheFahrzeug(id){
@@ -99,10 +109,20 @@ function abgleichFuehrerschein(maschine, mensch){
   var i = 1;
   while(mensch['Fuehrerschein' + i + '_ID'] != null){
     if(maschine === mensch['Fuehrerschein' + i + '_ID']){
-      //Validity needs to be compared with today's date here
-      // if valid:
-      return true;
-      // else return false;
+      var gueltigkeit = mensch['F' + i + '_Gueltigkeit'];
+      var datum = gueltigkeit.split('-');
+      var heute = new Date();
+      if(heute.getFullYear() < datum[0]){
+        return true;
+      } else if(heute.getFullYear() === datum[0]) {
+        if(heute.getMonth() < datum[1]){
+          return true;
+        } else if(heute.getMonth() === datum[1]){
+          if(heute.getDate() <= datum[2]){
+            return true;
+          }
+        }
+      }
     }
     i++;
   }
@@ -113,10 +133,20 @@ function abgleichQualifikation(maschine, mensch){
   var i = 1;
   while(mensch['Qualifikation' + i + '_ID'] != null){
     if(maschine === mensch['Qualifikation' + i + '_ID']){
-      //Validity needs to be compared with today's date here
-      // if valid:
-      return true;
-      // else return false;
+      var gueltigkeit = mensch['Q' + i + '_Gueltigkeit'];
+      var datum = gueltigkeit.split('-');
+      var heute = new Date();
+      if(heute.getFullYear() < datum[0]){
+        return true;
+      } else if(heute.getFullYear() === datum[0]) {
+        if(heute.getMonth() < datum[1]){
+          return true;
+        } else if(heute.getMonth() === datum[1]){
+          if(heute.getDate() <= datum[2]){
+            return true;
+          }
+        }
+      }
     }
     i++;
   }

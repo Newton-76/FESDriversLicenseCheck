@@ -1,7 +1,7 @@
 {
   "name": "FES Driver's License Check Application",
   "short_name": "LicenseCheck",
-  "start_url": "/FESDriversLicenseCheck/index.html",
+  "start_url": "/.",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#040521",
@@ -9,13 +9,13 @@
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "/FESDriversLicenseCheck/img/manifest-icon-192.png",
+      "src": "/img/manifest-icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/FESDriversLicenseCheck/img/manifest-icon-512.png",
+      "src": "/img/manifest-icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

@@ -25,7 +25,7 @@
    </div>
    <?php
     require_once "connect.php";
-    require "storePerson.php";
+    require "storeVehicle.php";
     ?>
  </body>
  </html>
