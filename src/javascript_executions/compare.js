@@ -3,29 +3,31 @@
 
 var istFahrer = false;
 var istFahrzeug = false;
+var ersterScan = null;
+var zweiterScan = null;
+var found = false;
 
 function firstScan(){
-  var ersterScan = sucheFahrzeug(ersteRFID);
-  if(ersterScan === null){
+  if((ersterScan = sucheFahrzeug(ersteRFID)) === null){
     ersterScan = sucheFahrer(ersteRFID);
   } else{
     istFahrzeug = true;
     text.innerHTML = "Fahrzeug erkannt";
   }
-  if(ersterScan === null){
-    alert("RFID nicht in der Datenbank vorhanden!");
-    ersteRFID = null;
-    text.innerHTML = "";
-  } else{
-    istFahrer = true;
-    text.innerHTML = "Fahrer erkannt";
+  if(!istFahrzeug){
+    if(ersterScan === null){
+      alert("RFID nicht in der Datenbank vorhanden!");
+      text.innerHTML = "";
+    } else{
+      istFahrer = true;
+      text.innerHTML = "Fahrer erkannt";
+    }
   }
 }
 
 
 function startComparing(){
   if(istFahrzeug || istFahrer){
-    var zweiterScan;
     if(istFahrzeug){
       zweiterScan = sucheFahrer(zweiteRFID);
       if(zweiterScan === null){
@@ -89,26 +91,31 @@ function startComparing(){
 
 function sucheFahrzeug(id){
   var i = 0;
-  var found = false;
+  found = false;
   while(fahrzeuge[i] != null){
+    console.log(fahrzeuge[i]["RFID"]);
+    console.log(id);
     if(fahrzeuge[i]['RFID'] === id){
       found = true;
-      return fahrzeuge[i];
+      console.log("Comparison successful!");
+      return fahrzeugklassen[(fahrzeuge[i]["Fahrzeug_ID"] - 1)];
     }
     i++;
   }
-  if(found === false) return null;
+  if(!found) return null;
 }
 
 function sucheFahrer(id){
   var i = 0;
+  found = false;
   while(fahrer[i] != null){
     if(fahrer[i]['RFID'] === id){
+      found = true;
       return fahrer[i];
     }
     i++;
   }
-  return null;
+  if(!found) return null;
 }
 
 function abgleichFuehrerschein(maschine, mensch){

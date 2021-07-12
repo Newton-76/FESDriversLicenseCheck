@@ -14,11 +14,9 @@ function start(){
   var fahrzeugart = new Fahrzeugart();
   var bezeichnung = document.getElementById("bezeichnung");
   fahrzeugart.bezeichnung = bezeichnung.value;
-  console.log(fahrzeugart.bezeichnung);
   var liste = document.getElementById("liste");
   if(liste.selectedIndex > 0){
     fahrzeugart.fuehrerscheinID = fuehrerscheine[liste.selectedIndex - 1]["id"];
-    console.log(fahrzeugart.fuehrerscheinID);
   }
   addQualifications(fahrzeugart);
   document.cookie = "fahrzeugart=" + JSON.stringify(fahrzeugart);

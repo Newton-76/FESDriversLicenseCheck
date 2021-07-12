@@ -22,6 +22,8 @@
     var fahrzeuge = <?php require "loadFahrzeuge.php" ?>;
     var fahrer = <?php require "loadFahrer.php" ?>;
     var fahrzeugklassen = <?php require "loadFahrzeugklassen.php" ?>;
+    var fuehrerscheine = <?php require "loadFuehrerscheine.php" ?>;
+    var qualifikationen = <?php require "loadQualifikationen.php" ?>;
     var ersteRFID = null;
     var zweiteRFID = null;
   </script>

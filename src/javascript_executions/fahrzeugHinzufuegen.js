@@ -25,11 +25,15 @@ function rfidCheck(){
 
 function startAdding() {
   const fahrzeug = new Fahrzeug();
+  var liste = document.getElementById("liste");
   fahrzeug.rfid = id;
   fahrzeug.kennzeichen = document.getElementById("kennzeichen").value;
-  fahrzeug.fahrzeugart = 1; //Choose from dropdown list
+  if(liste.selectedIndex > 0){
+    fahrzeug.fahrzeugart = fahrzeugklassen[liste.selectedIndex - 1]["id"];
+  }
   console.log(fahrzeug);
   document.cookie = "fahrzeug=" + JSON.stringify(fahrzeug);
+  document.location.href = "vehicle_added.php";
 }
 
 

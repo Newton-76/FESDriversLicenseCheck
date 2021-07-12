@@ -4,6 +4,7 @@ var formular = document.getElementById("formular");
 
 var i = 0;
 var select = document.createElement("select");
+select.setAttribute("id", "liste");
 var option = document.createElement("option");
 option.innerHTML = "...";
 select.appendChild(option);

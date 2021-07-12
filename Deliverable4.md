@@ -28,6 +28,9 @@ and compare the values.
 There still needs to be implemented a way to add qualifications to the list.
 Also we need to add the function of adding persons or vehicles to the database.
 
+The basic function of the application is implemented.
+Functions like editing and deleting datasets are not done yet.
+
 ### Test
 
 The functionality of the application as a progressive web application has been
@@ -39,6 +42,9 @@ The MySQL database is now implemented via PHP and was tested by using a XAMPP
 localhost. There have been several datasets that were printed on the console.
 
 The RFID-Tag-Reader was tested using Github Pages.
+
+Everything is running on a XAMPP server now. The functions using the RFID tags
+have only been tested rarely.
 
 ### Status / grade of fulfillment of work products
 
