@@ -1,4 +1,3 @@
-//  Here the scanner needs to be started and return a RFID into var rfid
 // Author: Denis Neumann, 1308358
 
 class Person {

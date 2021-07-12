@@ -32,7 +32,7 @@ while(qualifikationen[i] != null){
   div = document.createElement("div");
   checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
-  checkbox.setAttribute("name", i);
+  checkbox.setAttribute("id", "checkbox" + i);
   label = document.createElement("label");
   label.setAttribute("for", i);
   label.innerHTML = qualifikationen[i]["Qualifikation"];

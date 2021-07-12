@@ -13,25 +13,14 @@
 </head>
 
 <body>
-  <?php require_once "connect.php"; ?>
-
-  <script>
-  // Adapted the hints and instructions given by https://stackoverflow.com/questions/23740548/how-do-i-pass-variables-and-data-from-php-to-javascript
-  // Author: Denis Neumann, 1308358
-    var fahrzeugklassen = <?php require "loadFahrzeugklassen.php" ?>;
-    var fuehrerscheine = <?php require "loadFuehrerscheine.php"; ?>;
-    var qualifikationen = <?php require "loadQualifikationen.php"; ?>;
-  </script>
+  <?php
+    require_once "connect.php";
+    require "storeFahrzeugart.php";
+  ?>
 
   <div class="w3-bar w3-border" >
     <a href="/main_menu.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>
     <a href="/index.html" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i></a>
   </div>
-  <form id="formular" action="/fahrzeugart_plus.php">
-    <label for="art">Bezeichnung des Fahrzeugs: </label>
-    <input type="text" id="art" name="art"></input>
-    <script src="/src/javascript_executions/fahrzeugartFormular.js"></script>
-    <input type="submit" value="Hinzufügen">
-  </form>
 </body>
 </html>
