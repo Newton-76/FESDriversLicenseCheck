@@ -27,14 +27,21 @@
   // Brought data back to php with the help of https://www.w3schools.com/js/js_cookies.asp and https://www.google.com/amp/s/www.geeksforgeeks.org/how-to-pass-javascript-variables-to-php/amp/
   var id = null;
   </script>
-  <button id="scan">Click to start scanning!</button>
-  <script src="/src/javascript_executions/addingScanner.js"></script>
-
-  <div class="w3-display-left"><a href="/vehicle_added.php"><img src="/img/inapp_icons/030-creditcard.png"></div>
-
   <div class="w3-bar w3-border" >
     <a href="/main_menu.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>
     <a href="/index.html" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i></a>
+  </div>
+
+  <div id="formular">
+    <label for="RFID">RFID: </label>
+    <input type="text" name="RFID" id="RFID" readonly>
+    <button id="scan">Starte Scanner</button><br>
+    <script src="/src/javascript_executions/addingScanner.js"></script><br>
+    <label for="kennzeichen">Kennzeichen: </label>
+    <input type="text" name="kennzeichen" id="kennzeichen" value="F-ES "><br>
+    <p>Fahrzeugart: </p>
+    <script src="/src/javascript_executions/fahrzeugFormular.js"></script>
+    <br><br><button onclick="startAdding()">Hinzufügen</button>
   </div>
 </body>
 </html>

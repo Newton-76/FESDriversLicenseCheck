@@ -67,3 +67,27 @@ connections.
 In the meantime we found out, that we need to use a secure connection via
 HTTPS and an Android phone that's able to read NFC-Tags.
 The most simple way to do so is using Github-pages.
+
+## Deliverable 4
+
+### Design
+
+There is still an issue with the icons, they should be changed to meaningful icons,
+for example should there be a person and a vehicle instead of a person and a credit
+card.
+Also there is a wrong icon on the top bar, because creating new qualifications
+shouldn't be represented by a human body.
+The forms to enter the data of new datasets are just prototypes. They were created
+last minute, as the task hasn't done by the responsive person. There is a lot to beautify.
+
+### MySQL
+
+There may be a better solution in the database, than creating a column for each single
+qualification. But as a person is supposed to be capable of having all driver's licenses
+and all qualifications possible, this is at least a solution that works.
+
+### NFC-Reader
+
+Unfortunately there hasn't been a lot of opportunities for me to test the functionality
+of the reader, otherwise I may have found a better solution than touching a button
+to start the scanning function.

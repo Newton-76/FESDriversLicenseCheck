@@ -22,7 +22,8 @@
     reader.onreading = event => {
       console.log('Event:', event);
       id = event.serialNumber;
-      startAdding();
+      document.getElementById("RFID").value = id;
+      rfidCheck();
     };
   } else {
     alert("NFC is not supported!");

@@ -22,21 +22,27 @@
   // Author: Denis Neumann, 1308358
     var fahrzeuge = <?php require "loadFahrzeuge.php"; ?>;
     var fahrer = <?php require "loadFahrer.php"; ?>;
-    var fahrzeugklassen = <?php require "loadFahrzeugklassen.php" ?>;
     var fuehrerscheine = <?php require "loadFuehrerscheine.php"; ?>;
     var qualifikationen = <?php require "loadQualifikationen.php"; ?>;
-
   // Brought data back to php with the help of https://www.w3schools.com/js/js_cookies.asp and https://www.google.com/amp/s/www.geeksforgeeks.org/how-to-pass-javascript-variables-to-php/amp/
     var id = null;
   </script>
-  <button id="scan">Click to start scanning!</button>
-  <script src="/src/javascript_executions/addingScanner.js"></script>
-
-  <div class="w3-display-right"><a href="/person_added.php"><img src="/img/inapp_icons/047-user.png"> </div>
-
   <div class="w3-bar w3-border" >
     <a href="/main_menu.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>
     <a href="/index.html" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i></a>
+  </div>
+
+  <div id="formular">
+    <label for="RFID">RFID: </label>
+    <input type="text" name="RFID" id="RFID" readonly>
+    <button id="scan">Starte Scanner</button>
+    <script src="/src/javascript_executions/addingScanner.js"></script><br>
+    <label for="vorname">Vorname: </label>
+    <input type="text" name="vorname" id="vorname"><br>
+    <label for="nachname">Nachname: </label>
+    <input type="text" name="nachname" id="nachname"><br>
+    <script src="/src/javascript_executions/personFormular.js"></script>
+    <br><br><button onclick="startAdding()">Hinzufügen</button>
   </div>
 </body>
 </html>

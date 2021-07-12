@@ -27,5 +27,6 @@
     require_once "connect.php";
     require "storeVehicle.php";
     ?>
+    <p> Erfolg! </p>
  </body>
  </html>

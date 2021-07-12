@@ -1,5 +1,7 @@
 // Author: Denis Neumann, 1308358
 
+var checkbox = null;
+
 class Person {
   constructor() {
     this.rfid;
@@ -16,50 +18,41 @@ class Person {
   }
 }
 
+function rfidCheck(){
+  if (sucheFahrer(id) != null){
+    if(confirm("Fahrer bereits vorhanden, wollen Sie Änderungen vornehmen?")){
+
+    } else{
+      document.location.href = "main_menu.html";
+    }
+  } else if(sucheFahrzeug(id) != null){
+    alert("RFID wird bereits als Fahrzeug verwendet!");
+    document.location.href = "main_menu.html";
+  }
+}
 
 function startAdding() {
-  if (sucheFahrer(id) != null || sucheFahrzeug(id) != null) alert("RFID bereits in Verwendung!");
-  else {
-    const person = new Person();
-    person.rfid = id;
-    person.vorname = prompt("Bitte geben Sie den Vornamen ein:", "Vorname");
-    person.nachname = prompt("Bitte geben Sie den Nachnamen ein:", "Nachname");
-    addLicenses(person);
-    addQualifications(person);
-    console.log(person);
-    document.cookie = "person=" + JSON.stringify(person);
-  }
+  const person = new Person();
+  person.rfid = id;
+  person.vorname = document.getElementById("vorname").value;
+  person.nachname = document.getElementById("nachname").value;
+  addLicenses(person);
+  addQualifications(person);
+  document.cookie = "person=" + JSON.stringify(person);
+  document.location.href = "person_added.php";
 }
 
 function addLicenses(person) {
   var i = 0;
   var j = 0;
-  while (fuehrerscheine[i] != null) {
-    if (confirm("Fuehrerschein Klasse " + fuehrerscheine[i]['Klasse'] + " vorhanden?")) {
-      person.fuehrerscheinIDs[j] = fuehrerscheine[i]['id'];
-      var year = parseInt(prompt("In welchem Jahr verliert der Fuehrerschein die Gueltigkeit?"));
-      while (isNaN(year) || year < new Date().getFullYear()) {
-        alert("Bitte nur gueltige Zahlen eingeben!");
-        year = prompt("In welchem Jahr verliert der Fuehrerschein die Gueltigkeit?")
-      }
-      person.fGueltigkeiten[j] = year.toString() + "-";
-      var month = parseInt(prompt("In welchem Monat verliert der Fuehrerschein die Gueltigkeit?"));
-      while (isNaN(month) || month < 0 || month > 12) {
-        alert("Bitte nur gueltige Zahlen eingeben!");
-        month = prompt("In welchem Monat verliert der Fuehrerschein die Gueltigkeit?")
-      }
-      if (month < 10) person.fGueltigkeiten[j] += "0";
-      person.fGueltigkeiten[j] += month + "-";
-      var day = parseInt(prompt("An welchem Tag verliert der Fuehrerschein die Gueltigkeit?"));
-      while (isNaN(day) || day < 0 || day > 31) {
-        alert("Bitte nur gueltige Zahlen eingeben!");
-        day = prompt("An welchem Tag verliert der Fuehrerschein die Gueltigkeit?")
-      }
-      if (day < 10) person.fGueltigkeiten[j] += "0";
-      person.fGueltigkeiten[j] += day;
+  while(document.getElementById("fuehrerschein" + i) != null){
+    checkbox = document.getElementById("fuehrerschein" + i);
+    if(checkbox.checked){
+      person.fuehrerscheinIDs[j] = fuehrerscheine[i]["id"];
+      person.fGueltigkeiten[j] = document.getElementById("fDateInput" + i).value;
       j++;
     }
-    i++;
+   i++;
   }
   person.anzahlFuehrerschienKlassen = i;
   person.anzahlFuehrerscheine = j;
@@ -68,32 +61,14 @@ function addLicenses(person) {
 function addQualifications(person) {
   var i = 0;
   var j = 0;
-  while (qualifikationen[i] != null) {
-    if (confirm("Ist " + qualifikationen[i]['Qualifikation'] + " vorhanden?")) {
-      person.qualifikationIDs[j] = qualifikationen[i]['id'];
-      var year = parseInt(prompt("In welchem Jahr verliert die Schulung die Gueltigkeit?"));
-      while (isNaN(year) || year < new Date().getFullYear()) {
-        alert("Bitte nur gueltige Zahlen eingeben!");
-        year = prompt("In welchem Jahr verliert die Schulung die Gueltigkeit?")
-      }
-      person.qGueltigkeiten[j] = year.toString() + "-";
-      var month = parseInt(prompt("In welchem Monat verliert die Schulung die Gueltigkeit?"));
-      while (isNaN(month) || month < 0 || month > 12) {
-        alert("Bitte nur gueltige Zahlen eingeben!");
-        month = prompt("In welchem Monat verliert die Schulung die Gueltigkeit?")
-      }
-      if (month < 10) person.qGueltigkeiten[j] += "0";
-      person.qGueltigkeiten[j] += month + "-";
-      var day = parseInt(prompt("An welchem Tag verliert die Schulung die Gueltigkeit?"));
-      while (isNaN(day) || day < 0 || day > 31) {
-        alert("Bitte nur gueltige Zahlen eingeben!");
-        day = prompt("An welchem Tag verliert die Schulung die Gueltigkeit?")
-      }
-      if (day < 10) person.qGueltigkeiten[j] += "0";
-      person.qGueltigkeiten[j] += day;
+  while(document.getElementById("qualifikation" + i) != null){
+    checkbox = document.getElementById("qualifikation" + i);
+    if(checkbox.checked){
+      person.qualifikationIDs[j] = qualifikationen[i]["id"];
+      person.qGueltigkeiten[j] = document.getElementById("qDateInput" + i).value;
       j++;
     }
-    i++;
+   i++;
   }
   person.anzahlQualifikationsArten = i;
   person.anzahlQualifikationen = j;

@@ -1,20 +1,24 @@
 //  Here the scanner needs to be started and return a RFID into var rfid
 // Implementation of the comparison: Denis Neumann, 1308358
 
+var istFahrer = false;
+var istFahrzeug = false;
+
 function firstScan(){
   var ersterScan = sucheFahrzeug(ersteRFID);
-  var istFahrzeug = false;
-  var istFahrer = false;
   if(ersterScan === null){
     ersterScan = sucheFahrer(ersteRFID);
   } else{
     istFahrzeug = true;
+    text.innerHTML = "Fahrzeug erkannt";
   }
   if(ersterScan === null){
     alert("RFID nicht in der Datenbank vorhanden!");
     ersteRFID = null;
+    text.innerHTML = "";
   } else{
     istFahrer = true;
+    text.innerHTML = "Fahrer erkannt";
   }
 }
 
@@ -28,6 +32,7 @@ function startComparing(){
         alert("Kein Fahrer gefunden!");
         ersteRFID = null;
         zweiteRFID = null;
+        text.innerHTML = "";
       }
     }
     if(istFahrer){
@@ -36,44 +41,45 @@ function startComparing(){
         alert("Kein Fahrzeug gefunden!");
         ersteRFID = null;
         zweiteRFID = null;
+        text.innerHTML = "";
       }
     }
     if(zweiterScan != null){
       if(istFahrzeug){
         var active = true;
         if(!abgleichFuehrerschein(ersterScan['Fuehrerschein_ID'], zweiterScan)){
-          alert("Fuererschein Klasse " + fuehrerscheine[(ersterScan['Fuehrerschein_ID'] - 1)]['Klasse'] + " nicht vorhanden!");
+          text.innerHTML = "Fuererschein Klasse " + fuehrerscheine[(ersterScan['Fuehrerschein_ID'] - 1)]['Klasse'] + " nicht vorhanden!";
           active = false;
         }
         var i = 1;
         while(ersterScan['Qualifikation' + i + '_ID'] != null){
           if(active){
             if(!abgleichQualifikation(ersterScan['Qualifikation' + i + '_ID'], zweiterScan)){
-              alert(qualifikationen[(ersterScan['Qualifikation' + i + '_ID'] - 1)]['Qualifikation'] + " nicht vorhanden!");
+              text.innerHTML = qualifikationen[(ersterScan['Qualifikation' + i + '_ID'] - 1)]['Qualifikation'] + " nicht vorhanden!";
               active = false;
             }
             i++;
           }
         }
-        if(active) alert("Wenn sich " + zweiterScan['Vorname'] + " " + zweiterScan['Nachname'] + " vor Ihnen befindet, koennen Sie die Schluessel beruhigt abgeben :)");
+        if(active) text.innerHTML = "Wenn sich " + zweiterScan['Vorname'] + " " + zweiterScan['Nachname'] + " vor Ihnen befindet, koennen Sie die Schluessel beruhigt abgeben :)";
       }
       if(istFahrer){
         var active = true;
         if(!abgleichFuehrerschein(zweiterScan['Fuehrerschein_ID'], ersterScan)){
-          alert("Fuererschein Klasse " + fuehrerscheine[(zweiterScan['Fuehrerschein_ID'] - 1)]['Klasse'] + "nicht vorhanden!");
+          text.innerHTML = "Fuererschein Klasse " + fuehrerscheine[(zweiterScan['Fuehrerschein_ID'] - 1)]['Klasse'] + "nicht vorhanden!";
           active = false;
         }
         var i = 1;
         while(zweiterScan['Qualifikation' + i + '_ID'] != null){
           if(active){
             if(!abgleichQualifikation(zweiterScan['Qualifikation' + i + '_ID'], ersterScan)){
-              alert(qualifikationen[(zweiterScan['Qualifikation' + i + '_ID'] - 1)]['Qualifikation'] + " nicht vorhanden!");
+              text.innerHTML = qualifikationen[(zweiterScan['Qualifikation' + i + '_ID'] - 1)]['Qualifikation'] + " nicht vorhanden!";
               active = false;
             }
             i++;
           }
         }
-        if(active) alert("Wenn sich " + ersterScan['Vorname'] + " " + ersterScan['Nachname'] + " vor Ihnen befindet, koennen Sie die Schluessel beruhigt abgeben :)");
+        if(active) text.innerHTML = "Wenn sich " + ersterScan['Vorname'] + " " + ersterScan['Nachname'] + " vor Ihnen befindet, koennen Sie die Schluessel beruhigt abgeben :)";
       }
     }
   }

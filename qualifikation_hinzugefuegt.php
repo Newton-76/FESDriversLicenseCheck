@@ -15,7 +15,7 @@
 <body>
   <?php
     require_once "connect.php";
-    require "storeFahrzeugart.php";
+    require "storeQualifikation.php";
   ?>
 
   <div class="w3-bar w3-border" >

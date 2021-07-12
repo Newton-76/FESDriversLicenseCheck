@@ -14,7 +14,7 @@ var option = document.createElement("option");
 option.innerHTML = "...";
 select.appendChild(option);
 while(fuehrerscheine[i] != null){
-  var option = document.createElement("option");
+  option = document.createElement("option");
   option.innerHTML = fuehrerscheine[i]["Klasse"];
   select.appendChild(option);
   i++;

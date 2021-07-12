@@ -4,7 +4,7 @@
  *  https://web.dev/nfc/
  * Author: Denis Neumann, 1308358
  */
-/*
+
 document.addEventListener('DOMContentLoaded', event => {
   const scanButton = document.getElementById('scan');
   if ("NDEFReader" in window) {
@@ -31,11 +31,12 @@ document.addEventListener('DOMContentLoaded', event => {
     };
   } else {
     alert("NFC is not supported!");
+    text.innerHTML = "NFC is not supported!";
   }
 });
-*/
 
-// Testcode without button
+
+/*/ Testcode without button
 if ("NDEFReader" in window) {
   const reader = new NDEFReader();
 } else {
@@ -61,3 +62,4 @@ async function startScan() {
     }
   };
 }
+*/

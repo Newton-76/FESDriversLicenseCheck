@@ -43,9 +43,9 @@ The RFID-Tag-Reader was tested using Github Pages.
 ### Status / grade of fulfillment of work products
 
 - Requirements: 100%
-- Design/Documentation: 90%
-- Implementation: 99%
-- Test: 90%
+- Design/Documentation: 50%
+- Implementation: 90%
+- Test: 70%
 
 ### Reviews
 
@@ -66,6 +66,10 @@ Reviews are stored in: \FESDriversLicenseCheck\Tasks\Reviews
 - Discord should be installed and not used in web browsers.
 - Scheduled meetings and more fixed deadlines.
 
+- There is more to design than expected.
+- Vehicles should be defined in an external table.
+- Predicting and guessing the state of the project is not as easy as expected.
+
 ### Who did what?
 
 Daniel:
@@ -80,10 +84,10 @@ Denis:
 +   Add new dirvers and vehicles to the database (done)
 +   Find a way to implement and run the scanner and receive the tag's ID (done)
 +   Write installation instruction (done)
++   Connect functionality with design (done)
 -   Edit datasets (in progress)
--   Connect functionality with design (in progress, will be done as soon as design is done)
 
 Eric:
 +   Test the RFID reading function on an Android device (done)
-+   Check PIN code at login screen (done)
++   Check PIN code at login screen (done, but no logout)
 -   Design (in progress)

@@ -27,5 +27,6 @@
     require_once "connect.php";
     require "storePerson.php";
     ?>
+    <p> Erfolg! </p>
  </body>
  </html>

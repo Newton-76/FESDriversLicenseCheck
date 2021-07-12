@@ -9,17 +9,27 @@ class Fahrzeug {
   }
 }
 
+function rfidCheck(){
+  if (sucheFahrzeug(id) != null){
+    if(confirm("Fahrzeug bereits vorhanden, wollen Sie Änderungen vornehmen?")){
+
+    } else{
+      document.location.href = "main_menu.html";
+    }
+  } else if(sucheFahrer(id) != null){
+    alert("RFID wird bereits als Fahrer verwendet!");
+    document.location.href = "main_menu.html";
+  }
+}
+
 
 function startAdding() {
-  if (sucheFahrer(id) != null || sucheFahrzeug(id) != null) alert("RFID bereits in Verwendung!");
-  else {
-    const fahrzeug = new Fahrzeug();
-    fahrzeug.rfid = id;
-    fahrzeug.kennzeichen = prompt("Bitte geben Sie das Kennzeichen ein:", "F-ES ");
-    fahrzeug.fahrzeugart = 1; //Choose from dropdown list
-    console.log(fahrzeug);
-    document.cookie = "fahrzeug=" + JSON.stringify(fahrzeug);
-  }
+  const fahrzeug = new Fahrzeug();
+  fahrzeug.rfid = id;
+  fahrzeug.kennzeichen = document.getElementById("kennzeichen").value;
+  fahrzeug.fahrzeugart = 1; //Choose from dropdown list
+  console.log(fahrzeug);
+  document.cookie = "fahrzeug=" + JSON.stringify(fahrzeug);
 }
 
 

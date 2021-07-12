@@ -28,13 +28,11 @@
     <a href="/main_menu.html" class="w3-bar-item w3-button w3-blue"><i class="fa fa-home"></i></a>
     <a href="/index.html" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i></a>
   </div>
-  <!--form id="formular" onsubmit="start()"-->
   <div id="formular">
     <label for="art">Bezeichnung des Fahrzeugs: </label>
-    <input type="text" id="bezeichnung" name="bezeichnung"></input>
+    <input type="text" id="bezeichnung" name="bezeichnung">
     <script src="/src/javascript_executions/fahrzeugartFormular.js"></script>
     <button id="submit" onclick="start()">Hinzufügen</button>
-  <!--/form-->
   </div>
 </body>
 </html>
