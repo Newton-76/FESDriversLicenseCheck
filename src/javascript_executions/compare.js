@@ -8,6 +8,8 @@ var zweiterScan = null;
 var found = false;
 
 function firstScan(){
+  istFahrer = false;
+  istFahrzeug = false;
   if((ersterScan = sucheFahrzeug(ersteRFID)) === null){
     ersterScan = sucheFahrer(ersteRFID);
   } else{
@@ -60,8 +62,8 @@ function startComparing(){
               text.innerHTML = qualifikationen[(ersterScan['Qualifikation' + i + '_ID'] - 1)]['Qualifikation'] + " nicht vorhanden!";
               active = false;
             }
-            i++;
           }
+          i++;
         }
         if(active) text.innerHTML = "Wenn sich " + zweiterScan['Vorname'] + " " + zweiterScan['Nachname'] + " vor Ihnen befindet, koennen Sie die Schluessel beruhigt abgeben :)";
       }
@@ -78,8 +80,8 @@ function startComparing(){
               text.innerHTML = qualifikationen[(zweiterScan['Qualifikation' + i + '_ID'] - 1)]['Qualifikation'] + " nicht vorhanden!";
               active = false;
             }
-            i++;
           }
+          i++;
         }
         if(active) text.innerHTML = "Wenn sich " + ersterScan['Vorname'] + " " + ersterScan['Nachname'] + " vor Ihnen befindet, koennen Sie die Schluessel beruhigt abgeben :)";
       }
@@ -93,11 +95,8 @@ function sucheFahrzeug(id){
   var i = 0;
   found = false;
   while(fahrzeuge[i] != null){
-    console.log(fahrzeuge[i]["RFID"]);
-    console.log(id);
     if(fahrzeuge[i]['RFID'] === id){
       found = true;
-      console.log("Comparison successful!");
       return fahrzeugklassen[(fahrzeuge[i]["Fahrzeug_ID"] - 1)];
     }
     i++;

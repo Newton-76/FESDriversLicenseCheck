@@ -37,5 +37,12 @@
   <script src="/src/javascript_executions/compareScanner.js"></script>
   <br><br><p id="info"></p>
   <script>text = document.getElementById("info");</script>
+<!--Testing
+  <script>
+    ersteRFID = "00:00:00:00:00:00:00";
+    zweiteRFID = "FF:FF:FF:FF:FF:FF:FF";
+  </script>
+  <button onclick="firstScan()">firstScan</button>
+  <button onclick="startComparing()">secondScan</button-->
 </body>
 </html>
