@@ -120,3 +120,15 @@ Qualifikation5_ID INT UNSIGNED,
 FOREIGN KEY(Qualifikation5_ID) REFERENCES Qualifikationen(id),
 Q5_Gueltigkeit DATE
 );
+
+INSERT INTO Fahrzeuge
+VALUES("00:00:00:00:00:00:00", "F-ES xxx", 1);
+
+insert into fahrer
+values("FF:FF:FF:FF:FF:FF:FF", "John", "Doe", 1, "2025-05-05", 4, "2025-01-01", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, "2022-06-21", 5, "2029-03-03", NULL, NULL, NULL, NULL, NULL, NULL);
+
+SELECT * FROM Fahrer;
+SELECT * FROM Fahrzeuge;
+SELECT * FROM Fuehrerscheine;
+SELECT * FROM Qualifikationen;
+SELECT * FROM Fahrzeugklassen;
